@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="契审通——以版本化数据、受控 Agent 与人工审批完成企业合同智能审核。">
+  <title>契审通｜企业合同智能审核平台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop stop-color='%23fa9200'/%3E%3Cstop offset='1' stop-color='%238700ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Cpath d='M20 21h24M20 32h24M20 43h24' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="copy-tuning.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#hero" aria-label="契审通首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>契审通</span><small>QISHENTONG</small>
+      </a>
+      <nav aria-label="主导航">
+        <a class="site-nav-link" href="#workflow">产品能力</a><a class="site-nav-link" href="#flow">审核流程</a><a class="site-nav-link" href="#scenarios">应用场景</a><a class="site-nav-link" href="#security">安全治理</a>
+      </nav>
+      <a class="button button--small button--primary" href="#workflow">体验产品能力 <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="orb orb--one"></div><div class="orb orb--two"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">企业合同智能审核平台</p>
+          <h1><span class="headline-line">合同可核验</span><span class="gradient-text headline-line">结果可审批</span></h1>
+          <p class="hero-lead">合同先变成版本化条款，再由受控 Agent 检索、校验并生成候选。审批通过后，才写入正式记录。</p>
+          <div class="hero-actions"><a class="button button--primary" href="#workflow">探索契审通 <span>→</span></a><a class="button button--ghost" href="#flow">了解审核闭环</a></div>
+          <div class="hero-note"><span class="pulse"></span> Single Agent Harness · Plan-and-Execute · Tool Use · HITL</div>
+        </div>
+        <div class="product-stage reveal" aria-label="契审通合同审核工作台示意图">
+          <div class="window-bar"><span></span><span></span><span></span><b>合同审核工作台</b><em>安全连接</em></div>
+          <div class="app-shell">
+            <aside class="app-side"><div class="mini-logo">契</div><button class="side-active">⌁</button><button>▤</button><button>◇</button><button>⌘</button><button>⚙</button></aside>
+            <div class="app-main">
+              <div class="app-top"><div><small>合同项目 / 采购协议</small><strong>华东区域设备采购合同</strong></div><button>导出报告</button></div>
+              <div class="document-layout">
+                <div class="document-page"><div class="doc-title">设备采购合同</div><div class="doc-meta">合同编号 QST-2026-0187</div><p></p><p></p><p class="mark-line"></p><p></p><p></p><div class="risk-anchor">付款条件</div><p class="short"></p><p></p><p></p></div>
+                <div class="review-panel">
+                  <div class="score"><div><small>综合风险</small><strong>中风险</strong></div><span>72</span></div>
+                  <div class="finding finding--high"><i></i><div><b>付款节点缺少验收前置条件</b><small>第 7.2 条 · 已关联原文证据</small></div><em>高</em></div>
+                  <div class="finding"><i></i><div><b>自动续期窗口过短</b><small>第 11.4 条 · 建议补充提醒</small></div><em>中</em></div>
+                  <div class="finding finding--ok"><i></i><div><b>主体信息校验通过</b><small>工商信息与签署主体一致</small></div><em>✓</em></div>
+                  <div class="approval"><span>候选成果待审批</span><button>进入审批</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="stage-badge" id="demo-open" type="button" aria-haspopup="dialog"><span>▶</span> 观看产品演示</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="capability-strip" aria-label="产品能力概览">
+      <div class="shell"><p>为高价值合同工作而设计</p><div class="capabilities"><span>多格式解析</span><span>版本化条款</span><span>来源可追溯</span><span>确定性校验</span><span>人工审批</span><span>全链路审计</span></div></div>
+    </section>
+
+    <section class="workflow section-mist" id="workflow">
+      <div class="shell">
+        <div class="section-intro section-intro--center reveal"><p class="eyebrow">找到你的审核工作流</p><h2>从关键一步开始加速</h2><p>从批量审查到审批治理，选择场景，看契审通如何把合同语言变成行动。</p></div>
+        <div class="workflow-grid reveal">
+          <div class="workflow-tabs" role="tablist" aria-label="契审通工作流">
+            <button class="workflow-tab is-active" role="tab" aria-selected="true" data-workflow="review"><span class="tab-icon">⌕</span><span><b>批量审核合同</b><small>尽调、采购、租赁、批量审查</small></span></button>
+            <button class="workflow-tab" role="tab" aria-selected="false" data-workflow="risk"><span class="tab-icon">△</span><span><b>定位风险条款</b><small>规则检索、偏差识别、证据回链</small></span></button>
+            <button class="workflow-tab" role="tab" aria-selected="false" data-workflow="qa"><span class="tab-icon">◫</span><span><b>询问合同问题</b><small>基于版本与来源回答</small></span></button>
+            <button class="workflow-tab" role="tab" aria-selected="false" data-workflow="obligation"><span class="tab-icon">◷</span><span><b>提取履约事项</b><small>日期、金额、付款、验收</small></span></button>
+            <button class="workflow-tab" role="tab" aria-selected="false" data-workflow="approval"><span class="tab-icon">✓</span><span><b>治理候选成果</b><small>RBAC 审批、驳回与正式写入</small></span></button>
+          </div>
+          <article class="workflow-panel" id="workflow-panel" role="tabpanel" aria-live="polite">
+            <div class="workflow-copy"><p class="eyebrow" id="workflow-kicker">批量合同审核</p><h3 id="workflow-title">整组合同，关键条款一眼看清</h3><p id="workflow-description">按版本提取条款、聚合同类文件、定位异常表达，每条判断都能回到原文。</p><div class="tag-row" id="workflow-tags"><span>版本隔离</span><span>条款提取</span><span>来源引用</span><span>批量任务</span></div><a class="text-link" href="#flow">查看受控审核闭环 <span>→</span></a></div>
+            <div class="mini-product" id="mini-product" data-mode="review" aria-label="批量合同审核示意数据">
+              <div class="mini-top"><span id="mini-context">合同集 / 供应商框架协议</span><b id="mini-progress">12 / 12 已完成</b></div>
+              <div class="mini-demo-note"><span>示意数据</span><small id="mini-caption">合同风险评分</small></div>
+              <div class="mini-view" id="mini-view"></div>
+            </div>
+          </article>
+        </div>
+        <div class="source-note reveal"><span>证据优先</span><strong>模型输出不能直接成为合同事实。</strong><p>候选结果经过 Schema、证据与权限预检后持久化；只有授权审批才能触发正式写入。</p></div>
+      </div>
+    </section>
+
+    <section class="flow" id="flow">
+      <div class="shell">
+          <div class="section-intro section-intro--center reveal"><p class="eyebrow">受控端到端流程</p><h2>两条时间轴，一个审核闭环</h2><p>文档解析与 Agent 审核分别排队，并始终绑定确定的合同版本。</p></div>
+        <div class="flow-track reveal" role="list" aria-label="契审通审核流程">
+          <button class="flow-step is-active" data-step="0" role="listitem"><span>01</span><b>解析与版本化</b><small>PDF · Word · Excel</small></button>
+          <button class="flow-step" data-step="1" role="listitem"><span>02</span><b>意图与计划</b><small>身份 · 租户 · 规则 · 预算</small></button>
+          <button class="flow-step" data-step="2" role="listitem"><span>03</span><b>受控工具执行</b><small>RAG · 规则 · 程序校验</small></button>
+          <button class="flow-step" data-step="3" role="listitem"><span>04</span><b>证据与状态</b><small>Step · ToolCall · Source</small></button>
+          <button class="flow-step" data-step="4" role="listitem"><span>05</span><b>候选成果</b><small>Schema 与证据预检</small></button>
+          <button class="flow-step" data-step="5" role="listitem"><span>06</span><b>人工审批</b><small>批准后事务写入</small></button>
+        </div>
+        <div class="flow-detail reveal"><div class="flow-detail-icon" id="flow-detail-icon">01</div><div><p class="eyebrow" id="flow-detail-kicker">确定输入边界</p><h3 id="flow-detail-title">文件先变成可追踪版本</h3><p id="flow-detail-text">解析、切分并持久化合同版本；后续审核只读取确定的租户和版本。</p></div><div class="flow-detail-tags" id="flow-detail-tags"><span>解析队列</span><span>PostgreSQL</span><span>pgvector</span></div></div>
+      </div>
+    </section>
+
+    <section class="scenarios section-mist" id="scenarios">
+      <div class="shell"><div class="section-intro section-intro--center reveal"><p class="eyebrow">真实合同工作</p><h2>法务日常，一站处理</h2><p>从发现风险到形成履约动作，每个判断都有来源和业务出口。</p></div>
+        <div class="scenario-grid">
+          <article class="scenario-card reveal"><span>审查</span><div class="scenario-icon">§</div><h3>合规审查</h3><p>按企业规则扫描合同，标出偏离与证据。</p><a href="#workflow" data-workflow-target="risk">查看风险扫描 ↗</a></article>
+          <article class="scenario-card reveal"><span>抽取</span><div class="scenario-icon">⌗</div><h3>条款抽取</h3><p>提取日期、金额、权利与义务，形成结构化候选。</p><a href="#workflow" data-workflow-target="review">查看批量抽取 ↗</a></article>
+          <article class="scenario-card reveal"><span>风险</span><div class="scenario-icon">△</div><h3>风险定位</h3><p>结合语义检索与规则检查，快速发现风险。</p><a href="#workflow" data-workflow-target="risk">查看风险定位 ↗</a></article>
+          <article class="scenario-card reveal"><span>问答</span><div class="scenario-icon">?</div><h3>合同问答</h3><p>围绕确定版本提问，答案始终附带来源。</p><a href="#workflow" data-workflow-target="qa">查看合同问答 ↗</a></article>
+          <article class="scenario-card reveal"><span>履约</span><div class="scenario-icon">◷</div><h3>履约提醒</h3><p>校验付款、验收、续期与到期节点。</p><a href="#workflow" data-workflow-target="obligation">查看履约事项 ↗</a></article>
+          <article class="scenario-card reveal"><span>对比</span><div class="scenario-icon">⇄</div><h3>版本对比</h3><p>查看条款变化，让修改与判断同链追踪。</p><a href="#workflow" data-workflow-target="review">查看版本对比 ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" id="principles">
+      <div class="shell principle-grid">
+        <div class="principle-copy reveal"><p class="eyebrow">为什么是契审通</p><h2>有据，才可信</h2><p>从原文证据到候选成果，再到授权写入，每一步都有边界。</p><a class="button button--ghost" href="#security">了解安全治理</a></div>
+        <div class="principle-stack">
+          <article class="principle-card is-active reveal"><span class="principle-no">01</span><div><p>EXTRACT</p><h3>先找到证据</h3><small>在确定版本中检索条款，答案附带原文位置。</small></div><i></i></article>
+          <article class="principle-card reveal"><span class="principle-no">02</span><div><p>VERIFY</p><h3>再形成判断</h3><small>模型负责理解，确定性工具负责复核。</small></div><i></i></article>
+          <article class="principle-card reveal"><span class="principle-no">03</span><div><p>GOVERN</p><h3>最后经过授权</h3><small>RBAC 审批决定候选能否写入正式记录。</small></div><i></i></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence" id="evidence">
+      <div class="shell evidence-grid"><div class="reveal"><p class="eyebrow">架构证据</p><h2>为高价值合同而设计</h2><p>单一 Runtime 管理计划、预算与停止条件；真实结果进入持久状态。</p></div><div class="evidence-stats reveal"><article><strong>60</strong><span>条源码引用</span><small>架构图映射依据</small></article><article><strong>2</strong><span>类人工节点</span><small>澄清恢复 / 成果审批</small></article><article><strong>5</strong><span>类候选成果</span><small>与正式记录隔离</small></article></div></div>
+    </section>
+
+    <section class="security" id="security">
+      <div class="shell"><div class="section-intro section-intro--center reveal"><p class="eyebrow">面向企业运行</p><h2>安全、受控、全程可追踪</h2><p>模型进入正式业务前，先为数据、执行与写入划清边界。</p></div>
+        <div class="security-grid">
+          <article class="security-card reveal"><span>数据边界</span><div class="security-icon">◫</div><h3>保护版本与来源</h3><p>检索受租户与版本约束，证据和工具调用均可审计。</p><a href="#flow">查看版本化流程 →</a></article>
+          <article class="security-card reveal"><span>执行边界</span><div class="security-icon">⌘</div><h3>管住每次调用</h3><p>Schema、白名单、预算和超时共同约束执行。</p><a href="#flow">查看受控执行 →</a></article>
+          <article class="security-card reveal"><span>写入边界</span><div class="security-icon">✓</div><h3>批准后正式写入</h3><p>审核、摘要与履约先成为候选，授权后再写入。</p><a href="#principles">查看成果治理 →</a></article>
+        </div>
+        <div class="governance-rail reveal"><span>RBAC</span><span>Tenant isolation</span><span>Version binding</span><span>Budget</span><span>Timeout</span><span>Loop guard</span><span>Audit</span><span>Metrics / Trace</span></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="shell faq-grid"><div class="faq-copy reveal"><p class="eyebrow">常见问题</p><h2>评估合同 AI，你需要知道这些</h2><p>所有能力说明均来自项目架构材料，不包含未经验证的宣传。</p></div><div class="faq-list reveal">
+        <details open><summary>契审通解决什么问题？<i></i></summary><p>它把多格式合同转换为版本化数据，让受控 Agent 完成检索、确定性校验与候选生成，再由授权审批决定正式写入。</p></details>
+        <details><summary>支持哪些合同文件？<i></i></summary><p>当前架构明确覆盖 PDF、Word 与 Excel，并通过独立解析队列完成格式识别、条款切分和版本持久化。</p></details>
+        <details><summary>AI 的答案可以追溯吗？<i></i></summary><p>可以。检索结果、来源引用、工具调用与步骤状态被持久化，审核人员可从候选结论回到对应合同版本和原文证据。</p></details>
+        <details><summary>哪些工作不交给大模型？<i></i></summary><p>日期、金额、付款、验收等可确定计算由程序工具执行；模型主要负责语义理解、计划和候选生成。</p></details>
+        <details><summary>为什么需要人工审批？<i></i></summary><p>因为模型输出不是合同事实。候选成果只有通过 RBAC 授权审批后，才能成为报告、风险或履约节点等正式记录。</p></details>
+        <details><summary>这是多智能体系统吗？<i></i></summary><p>不是。核心采用单主 Agent Harness，由一个 Runtime 维护计划、历史、预算、工具策略和停止条件，以减少额外协作不确定性。</p></details>
+      </div></div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="closing-glow"></div><div class="shell closing-grid"><div class="reveal"><p class="eyebrow">让合同判断走到业务下一步</p><h2><span class="headline-line">从合同开始</span><span class="headline-line">看见审核闭环</span></h2><p>解析、取证、校验、生成候选，最后由授权人决定。</p><div class="hero-actions"><a class="button button--primary" href="#workflow">体验产品工作流 <span>→</span></a><a class="button button--dark" href="#evidence">查看架构证据</a></div></div><div class="closing-line" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+    </section>
+  </main>
+
+  <dialog class="demo-dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
+    <div class="demo-frame">
+      <header class="demo-header">
+        <div><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><div><small>契审通产品演示</small><strong id="demo-dialog-title">一份合同如何完成受控审核</strong></div></div>
+        <button class="demo-close" id="demo-close" type="button" aria-label="关闭演示">×</button>
+      </header>
+      <div class="demo-progress" aria-hidden="true"><span id="demo-progress-fill"></span></div>
+      <div class="demo-layout">
+        <nav class="demo-steps" id="demo-steps" aria-label="演示步骤">
+          <button class="is-active" type="button" data-demo-step="0"><span>01</span><b>解析合同</b></button>
+          <button type="button" data-demo-step="1"><span>02</span><b>锁定版本</b></button>
+          <button type="button" data-demo-step="2"><span>03</span><b>发现风险</b></button>
+          <button type="button" data-demo-step="3"><span>04</span><b>程序校验</b></button>
+          <button type="button" data-demo-step="4"><span>05</span><b>生成候选</b></button>
+          <button type="button" data-demo-step="5"><span>06</span><b>人工审批</b></button>
+        </nav>
+        <section class="demo-stage" aria-live="polite">
+          <div class="demo-stage-copy"><p id="demo-kicker">步骤 01 · 输入</p><h2 id="demo-title">合同先变成可追踪数据</h2><span id="demo-description">上传文件后完成解析、切分与字段识别，为后续审核建立稳定输入。</span></div>
+          <div class="demo-visual" id="demo-visual"></div>
+        </section>
+      </div>
+      <footer class="demo-controls">
+        <span id="demo-counter">01 / 06</span>
+        <div><button id="demo-prev" type="button" aria-label="上一步">←</button><button class="demo-play" id="demo-play" type="button"><span>Ⅱ</span> 暂停</button><button id="demo-next" type="button" aria-label="下一步">→</button></div>
+        <small>自动播放 · 可逐步查看</small>
+      </footer>
+    </div>
+  </dialog>
+
+  <footer><div class="shell footer-grid"><div class="footer-brand"><a class="brand" href="#hero"><span class="brand-mark"><i></i><i></i><i></i></span><span>契审通</span></a><p>企业合同智能审核平台<br>让每个结论都有来源，让每次写入都有授权。</p></div><div><h3>产品</h3><a href="#workflow">工作流</a><a href="#flow">审核流程</a><a href="#scenarios">应用场景</a></div><div><h3>企业能力</h3><a href="#security">安全治理</a><a href="#evidence">架构证据</a><a href="#faq">常见问题</a></div><div class="footer-meta"><span>QISHENTONG</span><p>Contract intelligence,<br>under control.</p></div></div><div class="shell footer-bottom"><span>© 2026 契审通 · 产品展示原型</span><span>基于项目架构材料构建</span></div></footer>
+</body>
+</html>
