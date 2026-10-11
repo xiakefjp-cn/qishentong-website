@@ -320,10 +320,16 @@ const startDemo = () => {
   }, 4000);
 };
 
-demoOpen?.addEventListener("click", () => {
-  renderDemoScene(0);
+const openDemo = (startIndex = 0) => {
+  renderDemoScene(startIndex);
   demoDialog.showModal();
   startDemo();
+};
+
+demoOpen?.addEventListener("click", () => openDemo(0));
+
+document.querySelectorAll("[data-demo-open-step]").forEach((button) => {
+  button.addEventListener("click", () => openDemo(Number(button.dataset.demoOpenStep)));
 });
 
 document.querySelector("#demo-close")?.addEventListener("click", () => demoDialog.close());
