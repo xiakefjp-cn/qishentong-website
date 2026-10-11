@@ -105,12 +105,12 @@
     <section class="scenarios section-mist" id="scenarios">
       <div class="shell"><div class="section-intro section-intro--center reveal"><p class="eyebrow">真实合同工作</p><h2>法务日常，一站处理</h2><p>从发现风险到形成履约动作，每个判断都有来源和业务出口。</p></div>
         <div class="scenario-grid">
-          <article class="scenario-card reveal"><span>审查</span><div class="scenario-icon">§</div><h3>合规审查</h3><p>按企业规则扫描合同，标出偏离与证据。</p><button class="scenario-action" type="button" data-demo-open-step="2">查看风险扫描 <span>→</span></button></article>
-          <article class="scenario-card reveal"><span>抽取</span><div class="scenario-icon">⌗</div><h3>条款抽取</h3><p>提取日期、金额、权利与义务，形成结构化候选。</p><button class="scenario-action" type="button" data-demo-open-step="0">查看批量抽取 <span>→</span></button></article>
+          <article class="scenario-card reveal"><span>审查</span><div class="scenario-icon">§</div><h3>合规审查</h3><p>按企业规则扫描合同，标出偏离与证据。</p><button class="scenario-action" type="button" data-demo-open-step="0">查看风险扫描 <span>→</span></button></article>
+          <article class="scenario-card reveal"><span>抽取</span><div class="scenario-icon">⌗</div><h3>条款抽取</h3><p>提取日期、金额、权利与义务，形成结构化候选。</p><button class="scenario-action" type="button" data-demo-open-step="1">查看批量抽取 <span>→</span></button></article>
           <article class="scenario-card reveal"><span>风险</span><div class="scenario-icon">△</div><h3>风险定位</h3><p>结合语义检索与规则检查，快速发现风险。</p><button class="scenario-action" type="button" data-demo-open-step="2">查看风险定位 <span>→</span></button></article>
-          <article class="scenario-card reveal"><span>问答</span><div class="scenario-icon">?</div><h3>合同问答</h3><p>围绕确定版本提问，答案始终附带来源。</p><button class="scenario-action" type="button" data-demo-open-step="2">查看合同问答 <span>→</span></button></article>
+          <article class="scenario-card reveal"><span>问答</span><div class="scenario-icon">?</div><h3>合同问答</h3><p>围绕确定版本提问，答案始终附带来源。</p><button class="scenario-action" type="button" data-demo-open-step="3">查看合同问答 <span>→</span></button></article>
           <article class="scenario-card reveal"><span>履约</span><div class="scenario-icon">◷</div><h3>履约提醒</h3><p>校验付款、验收、续期与到期节点。</p><button class="scenario-action" type="button" data-demo-open-step="4">查看履约事项 <span>→</span></button></article>
-          <article class="scenario-card reveal"><span>对比</span><div class="scenario-icon">⇄</div><h3>版本对比</h3><p>查看条款变化，让修改与判断同链追踪。</p><button class="scenario-action" type="button" data-demo-open-step="1">查看版本对比 <span>→</span></button></article>
+          <article class="scenario-card reveal"><span>对比</span><div class="scenario-icon">⇄</div><h3>版本对比</h3><p>查看条款变化，让修改与判断同链追踪。</p><button class="scenario-action" type="button" data-demo-open-step="5">查看版本对比 <span>→</span></button></article>
         </div>
       </div>
     </section>
@@ -160,21 +160,21 @@
   <dialog class="demo-dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
     <div class="demo-frame">
       <header class="demo-header">
-        <div><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><div><small>契审通产品演示</small><strong id="demo-dialog-title">一份合同如何完成受控审核</strong></div></div>
+        <div><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><div><small>契审通产品演示</small><strong id="demo-dialog-title">六项合同能力，依次演示</strong></div></div>
         <button class="demo-close" id="demo-close" type="button" aria-label="关闭演示">×</button>
       </header>
       <div class="demo-progress" aria-hidden="true"><span id="demo-progress-fill"></span></div>
       <div class="demo-layout">
         <nav class="demo-steps" id="demo-steps" aria-label="演示步骤">
-          <button class="is-active" type="button" data-demo-step="0"><span>01</span><b>解析合同</b></button>
-          <button type="button" data-demo-step="1"><span>02</span><b>锁定版本</b></button>
-          <button type="button" data-demo-step="2"><span>03</span><b>发现风险</b></button>
-          <button type="button" data-demo-step="3"><span>04</span><b>程序校验</b></button>
-          <button type="button" data-demo-step="4"><span>05</span><b>生成候选</b></button>
-          <button type="button" data-demo-step="5"><span>06</span><b>人工审批</b></button>
+          <button class="is-active" type="button" data-demo-step="0"><span>01</span><b>合规审查</b></button>
+          <button type="button" data-demo-step="1"><span>02</span><b>条款抽取</b></button>
+          <button type="button" data-demo-step="2"><span>03</span><b>风险定位</b></button>
+          <button type="button" data-demo-step="3"><span>04</span><b>合同问答</b></button>
+          <button type="button" data-demo-step="4"><span>05</span><b>履约提醒</b></button>
+          <button type="button" data-demo-step="5"><span>06</span><b>版本对比</b></button>
         </nav>
         <section class="demo-stage" aria-live="polite">
-          <div class="demo-stage-copy"><p id="demo-kicker">步骤 01 · 输入</p><h2 id="demo-title">合同先变成可追踪数据</h2><span id="demo-description">上传文件后完成解析、切分与字段识别，为后续审核建立稳定输入。</span></div>
+          <div class="demo-stage-copy"><p id="demo-kicker">能力 01 · 合规审查</p><h2 id="demo-title">企业规则逐条扫描</h2><span id="demo-description">对照规则库检查合同偏离，结论与原文证据一起呈现。</span></div>
           <div class="demo-visual" id="demo-visual"></div>
         </section>
       </div>

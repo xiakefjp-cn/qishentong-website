@@ -62,40 +62,40 @@ const workflowStates = {
 
 const demoScenes = [
   {
-    kicker: "步骤 01 · 输入",
-    title: "合同先变成可追踪数据",
-    description: "上传文件后完成解析、切分与字段识别，为后续审核建立稳定输入。",
-    visual: `<div class="demo-upload"><div class="demo-file"><span>DOCX</span><div><b>设备采购合同.docx</b><small>2.8 MB · 38 页</small></div><em>解析完成</em></div><div class="demo-processing"><span><i style="--w:100%"></i></span><div><b>186</b><small>条款片段</small></div><div><b>24</b><small>关键字段</small></div><div><b>12</b><small>附件引用</small></div></div></div>`
+    kicker: "能力 01 · 合规审查",
+    title: "企业规则逐条扫描",
+    description: "对照规则库检查合同偏离，结论与原文证据一起呈现。",
+    visual: `<div class="demo-risk"><div class="risk-score"><strong>86</strong><div><b>规则覆盖率</b><small>32 项通过 · 4 项需复核</small></div></div><div class="risk-bars"><article><span>主体与授权</span><i><b style="--w:94%"></b></i><em>通过</em></article><article><span>责任限制</span><i><b style="--w:76%"></b></i><em>偏离</em></article><article><span>付款条件</span><i><b style="--w:63%"></b></i><em>复核</em></article><article><span>争议解决</span><i><b style="--w:91%"></b></i><em>通过</em></article></div></div>`
   },
   {
-    kicker: "步骤 02 · 边界",
-    title: "审核始终绑定确定版本",
-    description: "租户、合同与版本共同限定数据边界，避免不同版本和项目相互污染。",
-    visual: `<div class="demo-version"><div class="version-path"><span>华东采购项目</span><i>→</i><span>设备采购合同</span><i>→</i><strong>V3 当前版本</strong></div><div class="version-list"><article><span>V3</span><div><b>第三次修订</b><small>今天 14:32 · 责任限制已调整</small></div><em>审核中</em></article><article><span>V2</span><div><b>法务修订版</b><small>昨天 18:06 · 已归档</small></div><em>只读</em></article><article><span>V1</span><div><b>供应商初稿</b><small>10 月 6 日 · 已归档</small></div><em>只读</em></article></div></div>`
+    kicker: "能力 02 · 条款抽取",
+    title: "关键条款批量结构化",
+    description: "识别日期、金额、权利与义务，让长合同快速变成可检查数据。",
+    visual: `<div class="demo-upload"><div class="demo-file"><span>DOCX</span><div><b>设备采购合同.docx</b><small>2.8 MB · 38 页</small></div><em>抽取完成</em></div><div class="demo-processing"><span><i style="--w:100%"></i></span><div><b>186</b><small>条款片段</small></div><div><b>24</b><small>关键字段</small></div><div><b>12</b><small>义务事项</small></div></div></div>`
   },
   {
-    kicker: "步骤 03 · 发现",
-    title: "语义检索定位风险线索",
-    description: "系统聚合规则与相似条款，快速找出偏离企业标准的合同表达。",
+    kicker: "能力 03 · 风险定位",
+    title: "风险与证据同时落位",
+    description: "语义检索结合规则检查，快速找出风险条款并回到原文位置。",
     visual: `<div class="demo-risk"><div class="risk-score"><strong>72</strong><div><b>综合风险</b><small>2 项高风险 · 3 项需确认</small></div></div><div class="risk-bars"><article><span>责任限制</span><i><b style="--w:88%"></b></i><em>高</em></article><article><span>付款验收</span><i><b style="--w:67%"></b></i><em>中</em></article><article><span>数据合规</span><i><b style="--w:42%"></b></i><em>中</em></article><article><span>争议解决</span><i><b style="--w:19%"></b></i><em>低</em></article></div></div>`
   },
   {
-    kicker: "步骤 04 · 校验",
-    title: "关键数字交给程序复核",
-    description: "日期、金额、付款与验收条件通过确定性工具计算，不让模型凭空判断。",
-    visual: `<div class="demo-checks"><div class="check-formula"><small>付款到期日</small><b>签署日 + 10 个工作日</b><strong>2026-10-24</strong></div><div class="check-list"><article><i>✓</i><span><b>金额合计</b><small>¥ 2,480,000.00</small></span><em>一致</em></article><article><i>✓</i><span><b>验收前置</b><small>到货验收单 + 发票</small></span><em>已关联</em></article><article class="is-warning"><i>!</i><span><b>续期通知</b><small>仅提前 15 日，低于规则值</small></span><em>需复核</em></article></div></div>`
+    kicker: "能力 04 · 合同问答",
+    title: "答案始终带着来源",
+    description: "围绕确定版本提问，回答引用具体条款，便于法务直接复核。",
+    visual: `<div class="demo-checks"><div class="check-formula"><small>提问</small><b>设备的质保期是多久？</b><strong>24 个月</strong></div><div class="check-list"><article><i>✓</i><span><b>回答依据</b><small>验收合格之日起计算</small></span><em>第 8.1 条</em></article><article><i>✓</i><span><b>版本范围</b><small>设备采购合同 · V3</small></span><em>已绑定</em></article><article class="is-warning"><i>!</i><span><b>相关附件</b><small>技术规格书存在补充约定</small></span><em>需联查</em></article></div></div>`
   },
   {
-    kicker: "步骤 05 · 隔离",
-    title: "成果先进入候选区",
-    description: "报告、风险与履约节点通过结构和证据预检后保存，但暂不改变正式记录。",
-    visual: `<div class="demo-candidates"><article><span>审核报告</span><strong>1</strong><small>证据覆盖 100%</small><em>候选</em></article><article><span>风险条目</span><strong>8</strong><small>2 项高风险</small><em>候选</em></article><article><span>履约节点</span><strong>6</strong><small>日期已校验</small><em>候选</em></article><div class="candidate-gate"><i>◇</i><span><b>正式记录保持不变</b><small>等待授权审批</small></span></div></div>`
+    kicker: "能力 05 · 履约提醒",
+    title: "把合同条件变成时间节点",
+    description: "校验付款、验收、续期与到期条件，形成可执行的履约提醒。",
+    visual: `<div class="demo-checks"><div class="check-formula"><small>最近节点</small><b>签署日 + 10 个工作日</b><strong>首付款 · 10-24</strong></div><div class="check-list"><article><i>✓</i><span><b>到货验收</b><small>2026-11-20 · 采购负责</small></span><em>已校验</em></article><article><i>✓</i><span><b>尾款支付</b><small>验收后 15 个工作日</small></span><em>待执行</em></article><article class="is-warning"><i>!</i><span><b>续期通知</b><small>通知窗口仅提前 15 日</small></span><em>需关注</em></article></div></div>`
   },
   {
-    kicker: "步骤 06 · 决策",
-    title: "授权人决定最终写入",
-    description: "审批人查看原文证据与校验结果，批准后才以事务方式写入正式记录。",
-    visual: `<div class="demo-approval"><div class="approval-card"><header><span><i>王</i><b>王法务</b><small>合同审批人</small></span><em>待决策</em></header><div><b>设备采购合同 · V3</b><small>8 项风险 · 6 个履约节点 · 证据预检通过</small></div><footer><button type="button" tabindex="-1">驳回</button><button type="button" tabindex="-1">批准并写入</button></footer></div><p><i>✓</i> 审批动作、操作者与写入结果进入审计链</p></div>`
+    kicker: "能力 06 · 版本对比",
+    title: "每次修改都清楚可追踪",
+    description: "对比不同版本的条款变化，让修改内容与风险判断保持同链。",
+    visual: `<div class="demo-version"><div class="version-path"><span>供应商初稿 V1</span><i>→</i><span>法务修订 V2</span><i>→</i><strong>当前版本 V3</strong></div><div class="version-list"><article><span>+2</span><div><b>新增数据保护义务</b><small>第 10.2、10.3 条</small></div><em>新增</em></article><article><span>~3</span><div><b>调整责任限制</b><small>赔偿上限由 50% 改为 100%</small></div><em>修改</em></article><article><span>-1</span><div><b>删除自动续期</b><small>原第 11.4 条</small></div><em>删除</em></article></div></div>`
   }
 ];
 
