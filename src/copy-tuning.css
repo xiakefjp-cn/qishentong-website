@@ -683,3 +683,46 @@ button:focus-visible { outline: 3px solid rgba(135, 0, 255, .22); outline-offset
 @media (prefers-reduced-motion: reduce) {
   .security-grid.is-playing .security-card.is-active::after { animation: none; transform: scaleX(1); }
 }
+
+.evidence {
+  min-height: calc(100svh - 74px);
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+  background:
+    radial-gradient(560px 340px at 100% 0, rgba(250, 146, 0, .13), transparent 66%),
+    radial-gradient(520px 360px at 0 100%, rgba(135, 0, 255, .09), transparent 68%),
+    #f6f7f9;
+}
+
+.evidence p:last-child {
+  color: #667287;
+}
+
+.evidence-stats article {
+  border-color: rgba(135, 0, 255, .18);
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 24px 52px -38px rgba(53, 34, 87, .42);
+}
+
+.evidence-stats small {
+  color: #788499;
+}
+
+.evidence.is-anchor-highlight {
+  box-shadow: inset 0 0 0 3px rgba(250, 146, 0, .72), inset 0 0 110px rgba(135, 0, 255, .16);
+  animation: evidence-anchor-highlight 1.8s ease both;
+}
+
+@keyframes evidence-anchor-highlight {
+  0%, 100% { box-shadow: inset 0 0 0 0 rgba(250, 146, 0, 0), inset 0 0 0 rgba(135, 0, 255, 0); }
+  32% { box-shadow: inset 0 0 0 3px rgba(250, 146, 0, .72), inset 0 0 110px rgba(135, 0, 255, .16); }
+}
+
+@media (max-width: 780px) {
+  .evidence { min-height: calc(100svh - 60px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .evidence.is-anchor-highlight { animation: none; }
+}

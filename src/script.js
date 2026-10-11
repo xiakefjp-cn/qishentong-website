@@ -315,6 +315,16 @@ const scrollToHash = (hash, updateHistory = true) => {
   window.setTimeout(updateActiveNavigation, prefersReducedMotion.matches ? 0 : 520);
 };
 
+let anchorHighlightTimer = null;
+const highlightAnchorTarget = (target) => {
+  window.clearTimeout(anchorHighlightTimer);
+  target.classList.remove("is-anchor-highlight");
+  window.requestAnimationFrame(() => {
+    target.classList.add("is-anchor-highlight");
+    anchorHighlightTimer = window.setTimeout(() => target.classList.remove("is-anchor-highlight"), 1800);
+  });
+};
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetMode = link.dataset.workflowTarget;
@@ -322,6 +332,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     if (!document.querySelector(link.hash)) return;
     event.preventDefault();
     scrollToHash(link.hash);
+    if (link.hasAttribute("data-anchor-highlight")) {
+      const target = document.querySelector(link.hash);
+      window.setTimeout(() => highlightAnchorTarget(target), prefersReducedMotion.matches ? 0 : 420);
+    }
   });
 });
 
