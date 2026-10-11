@@ -347,19 +347,69 @@ document.querySelectorAll(".flow-step").forEach((step) => {
   });
 });
 
+const securitySection = document.querySelector("#security");
+const securityGrid = document.querySelector(".security-grid");
+const securityDetail = document.querySelector("#security-detail");
+const securityOrder = ["data", "execution", "write"];
+const securityInteractionZones = [securityGrid, securityDetail].filter(Boolean);
+let securityIndex = 0;
+let securityTimer = null;
+let securityInView = false;
+
+const setSecurityState = (key) => {
+  const state = securityStates[key];
+  if (!state) return;
+  securityIndex = securityOrder.indexOf(key);
+  document.querySelectorAll("[data-security-card]").forEach((card) => card.classList.toggle("is-active", card.dataset.securityCard === key));
+  document.querySelector("#security-detail-no").textContent = state.number;
+  document.querySelector("#security-detail-kicker").textContent = state.kicker;
+  document.querySelector("#security-detail-title").textContent = state.title;
+  document.querySelector("#security-detail-text").textContent = state.text;
+  document.querySelector("#security-detail-tags").innerHTML = state.tags.map((tag) => `<span>${tag}</span>`).join("");
+};
+
+const securityIsBeingRead = () => securityInteractionZones.some((zone) => zone.matches(":hover") || zone.contains(document.activeElement));
+
+const stopSecurityAutoplay = (outsideView = false) => {
+  window.clearInterval(securityTimer);
+  securityTimer = null;
+  securityGrid?.classList.add("is-paused");
+  if (outsideView) securityGrid?.classList.remove("is-playing");
+};
+
+const startSecurityAutoplay = () => {
+  if (!securityInView || prefersReducedMotion.matches || securityIsBeingRead()) return;
+  window.clearInterval(securityTimer);
+  securityGrid?.classList.add("is-playing");
+  securityGrid?.classList.remove("is-paused");
+  securityTimer = window.setInterval(() => {
+    securityIndex = (securityIndex + 1) % securityOrder.length;
+    setSecurityState(securityOrder[securityIndex]);
+  }, 4000);
+};
+
 document.querySelectorAll("[data-security-target]").forEach((button) => {
   button.addEventListener("click", () => {
-    const key = button.dataset.securityTarget;
-    const state = securityStates[key];
-    if (!state) return;
-    document.querySelectorAll("[data-security-card]").forEach((card) => card.classList.toggle("is-active", card.dataset.securityCard === key));
-    document.querySelector("#security-detail-no").textContent = state.number;
-    document.querySelector("#security-detail-kicker").textContent = state.kicker;
-    document.querySelector("#security-detail-title").textContent = state.title;
-    document.querySelector("#security-detail-text").textContent = state.text;
-    document.querySelector("#security-detail-tags").innerHTML = state.tags.map((tag) => `<span>${tag}</span>`).join("");
+    setSecurityState(button.dataset.securityTarget);
+    stopSecurityAutoplay();
   });
 });
+
+securityInteractionZones.forEach((zone) => {
+  zone.addEventListener("mouseenter", () => stopSecurityAutoplay());
+  zone.addEventListener("mouseleave", startSecurityAutoplay);
+  zone.addEventListener("focusin", () => stopSecurityAutoplay());
+  zone.addEventListener("focusout", () => window.setTimeout(startSecurityAutoplay, 0));
+});
+
+if (securitySection) {
+  const securityObserver = new IntersectionObserver(([entry]) => {
+    securityInView = entry.isIntersecting;
+    if (securityInView) startSecurityAutoplay();
+    else stopSecurityAutoplay(true);
+  }, { threshold: .35 });
+  securityObserver.observe(securitySection);
+}
 
 document.querySelectorAll(".faq-list details").forEach((details) => {
   details.addEventListener("toggle", () => {

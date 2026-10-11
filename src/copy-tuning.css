@@ -552,6 +552,41 @@ button:focus-visible { outline: 3px solid rgba(135, 0, 255, .22); outline-offset
   box-shadow: 0 32px 66px -42px rgba(89, 40, 132, .48);
 }
 
+.security-card {
+  overflow: hidden;
+}
+
+.security-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--purple));
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.security-card.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.security-grid.is-playing .security-card.is-active::after {
+  animation: security-progress 4s linear forwards;
+}
+
+.security-grid.is-paused .security-card.is-active::after {
+  animation-play-state: paused;
+}
+
+@keyframes security-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 .security-action {
   position: absolute;
   left: 29px;
@@ -643,4 +678,8 @@ button:focus-visible { outline: 3px solid rgba(135, 0, 255, .22); outline-offset
 @media (max-width: 780px) {
   .security-detail { grid-template-columns: auto 1fr; padding: 20px; }
   .security-detail-tags { grid-column: 1 / -1; justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .security-grid.is-playing .security-card.is-active::after { animation: none; transform: scaleX(1); }
 }
