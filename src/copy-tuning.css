@@ -483,3 +483,66 @@ button:focus-visible { outline: 3px solid rgba(135, 0, 255, .22); outline-offset
   outline-offset: 5px;
   border-radius: 3px;
 }
+
+.principle-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: #7b8799;
+}
+
+.principle-status strong {
+  color: #9d5700;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.principle-status small {
+  font-size: 10px;
+}
+
+.principle-card {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.principle-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--purple));
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+}
+
+.principle-card.is-active::after {
+  opacity: 1;
+  animation: principle-progress 3.2s linear forwards;
+}
+
+.principle-stack.is-paused .principle-card.is-active::after {
+  animation-play-state: paused;
+}
+
+.principle-card.is-active .principle-no {
+  background: linear-gradient(145deg, #ffe3b8, #ead6ff);
+  box-shadow: 0 10px 24px -15px rgba(135, 0, 255, .7);
+}
+
+.principle-card:focus-visible {
+  outline: 3px solid rgba(135, 0, 255, .2);
+  outline-offset: 3px;
+}
+
+@keyframes principle-progress {
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principle-card.is-active::after { animation: none; transform: scaleX(1); }
+}

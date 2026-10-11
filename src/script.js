@@ -191,6 +191,65 @@ document.querySelectorAll(".workflow-tab").forEach((tab) => {
 });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const principleSection = document.querySelector("#principles");
+const principleStack = document.querySelector(".principle-stack");
+const principleCards = [...document.querySelectorAll(".principle-card")];
+let principleIndex = 0;
+let principleTimer = null;
+let principlesInView = false;
+
+const setPrinciple = (index) => {
+  principleIndex = (index + principleCards.length) % principleCards.length;
+  principleCards.forEach((card, cardIndex) => {
+    const isActive = cardIndex === principleIndex;
+    card.classList.toggle("is-active", isActive);
+    if (isActive) card.setAttribute("aria-current", "step");
+    else card.removeAttribute("aria-current");
+  });
+  document.querySelector("#principle-status").textContent = `${String(principleIndex + 1).padStart(2, "0")} / ${String(principleCards.length).padStart(2, "0")}`;
+};
+
+const stopPrinciples = () => {
+  window.clearInterval(principleTimer);
+  principleTimer = null;
+  principleStack?.classList.add("is-paused");
+};
+
+const startPrinciples = () => {
+  if (!principlesInView || prefersReducedMotion.matches || principleCards.length < 2) return;
+  if (principleStack?.matches(":hover") || principleStack?.contains(document.activeElement)) return;
+  window.clearInterval(principleTimer);
+  principleStack?.classList.remove("is-paused");
+  principleTimer = window.setInterval(() => setPrinciple(principleIndex + 1), 3200);
+};
+
+principleCards.forEach((card, index) => {
+  const selectCard = () => {
+    setPrinciple(index);
+    startPrinciples();
+  };
+  card.addEventListener("click", selectCard);
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    selectCard();
+  });
+});
+
+principleStack?.addEventListener("mouseenter", stopPrinciples);
+principleStack?.addEventListener("mouseleave", startPrinciples);
+principleStack?.addEventListener("focusin", stopPrinciples);
+principleStack?.addEventListener("focusout", () => window.setTimeout(startPrinciples, 0));
+
+if (principleSection) {
+  const principleObserver = new IntersectionObserver(([entry]) => {
+    principlesInView = entry.isIntersecting;
+    if (principlesInView) startPrinciples();
+    else stopPrinciples();
+  }, { threshold: .35 });
+  principleObserver.observe(principleSection);
+}
+
 const topNavLinks = [...document.querySelectorAll(".site-nav-link")];
 const navigationGroups = {
   workflow: "workflow",
