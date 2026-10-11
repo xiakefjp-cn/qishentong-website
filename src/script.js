@@ -108,6 +108,30 @@ const flowStates = [
   ["控制正式写入", "授权审批是最后一道门", "RBAC 决定批准或驳回；批准后才写入正式记录。", ["RBAC", "Approve / Reject", "Transaction"]]
 ];
 
+const securityStates = {
+  data: {
+    number: "01",
+    kicker: "数据边界 · VERSION BINDING",
+    title: "每次检索都绑定租户、合同与版本",
+    text: "系统只在确定的数据范围内查找证据，引用保留原文位置，避免跨项目或跨版本混用。",
+    tags: ["Tenant isolation", "Contract ID", "Version ID", "Source audit"]
+  },
+  execution: {
+    number: "02",
+    kicker: "执行边界 · CONTROLLED TOOLS",
+    title: "工具只能在许可范围内执行",
+    text: "Schema 校验输入输出，白名单限定可用工具，预算、超时和循环保护共同阻止失控调用。",
+    tags: ["Schema", "Allowlist", "Budget", "Timeout", "Loop guard"]
+  },
+  write: {
+    number: "03",
+    kicker: "写入边界 · GOVERNED RESULTS",
+    title: "候选成果经过授权才成为正式记录",
+    text: "审核、摘要和履约事项先进入候选区，通过证据预检与 RBAC 审批后，再以事务方式写入。",
+    tags: ["Candidate", "Evidence check", "RBAC", "Approve / Reject", "Transaction"]
+  }
+};
+
 const header = document.querySelector(".site-header");
 let lastScrollY = window.scrollY;
 let navigationLockUntil = 0;
@@ -320,6 +344,20 @@ document.querySelectorAll(".flow-step").forEach((step) => {
     document.querySelector("#flow-detail-title").textContent = title;
     document.querySelector("#flow-detail-text").textContent = text;
     document.querySelector("#flow-detail-tags").innerHTML = tags.map((tag) => `<span>${tag}</span>`).join("");
+  });
+});
+
+document.querySelectorAll("[data-security-target]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.securityTarget;
+    const state = securityStates[key];
+    if (!state) return;
+    document.querySelectorAll("[data-security-card]").forEach((card) => card.classList.toggle("is-active", card.dataset.securityCard === key));
+    document.querySelector("#security-detail-no").textContent = state.number;
+    document.querySelector("#security-detail-kicker").textContent = state.kicker;
+    document.querySelector("#security-detail-title").textContent = state.title;
+    document.querySelector("#security-detail-text").textContent = state.text;
+    document.querySelector("#security-detail-tags").innerHTML = state.tags.map((tag) => `<span>${tag}</span>`).join("");
   });
 });
 

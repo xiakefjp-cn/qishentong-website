@@ -546,3 +546,101 @@ button:focus-visible { outline: 3px solid rgba(135, 0, 255, .22); outline-offset
 @media (prefers-reduced-motion: reduce) {
   .principle-card.is-active::after { animation: none; transform: scaleX(1); }
 }
+
+.security-card.is-active {
+  border-color: rgba(135, 0, 255, .24);
+  box-shadow: 0 32px 66px -42px rgba(89, 40, 132, .48);
+}
+
+.security-action {
+  position: absolute;
+  left: 29px;
+  bottom: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #7f19d0;
+  font: 900 10px/1.4 var(--sans);
+  cursor: pointer;
+}
+
+.security-action span {
+  display: inline-block;
+  margin-left: 3px;
+  transition: transform .18s;
+}
+
+.security-action:hover span,
+.security-action:focus-visible span {
+  transform: translateX(4px);
+}
+
+.security-action:focus-visible {
+  outline: 2px solid rgba(135, 0, 255, .35);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+.security-detail {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(260px, .75fr);
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+  padding: 24px 28px;
+  border: 1px solid rgba(135, 0, 255, .14);
+  border-radius: 18px;
+  background: linear-gradient(110deg, #fff8ec, #fff 48%, #f8f0ff);
+  box-shadow: 0 24px 54px -42px rgba(44, 29, 75, .48);
+}
+
+.security-detail-no {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #925000;
+  background: linear-gradient(145deg, #ffe6bd, #efdfff);
+  font: 900 13px var(--serif);
+}
+
+.security-detail h3 {
+  margin: 2px 0 5px;
+  font-size: 22px;
+}
+
+.security-detail p {
+  margin: 0;
+  color: #6d788b;
+  font-size: 12px;
+}
+
+#security-detail-kicker {
+  color: #b46600;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.security-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.security-detail-tags span {
+  padding: 6px 9px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid #e4e1e9;
+  color: #5b6679;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+@media (max-width: 780px) {
+  .security-detail { grid-template-columns: auto 1fr; padding: 20px; }
+  .security-detail-tags { grid-column: 1 / -1; justify-content: flex-start; }
+}

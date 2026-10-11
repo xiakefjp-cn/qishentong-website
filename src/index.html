@@ -133,10 +133,15 @@
     <section class="security" id="security">
       <div class="shell"><div class="section-intro section-intro--center reveal"><p class="eyebrow">面向企业运行</p><h2>安全、受控、全程可追踪</h2><p>模型进入正式业务前，先为数据、执行与写入划清边界。</p></div>
         <div class="security-grid">
-          <article class="security-card reveal"><span>数据边界</span><div class="security-icon">◫</div><h3>保护版本与来源</h3><p>检索受租户与版本约束，证据和工具调用均可审计。</p><a href="#flow">查看版本化流程 →</a></article>
-          <article class="security-card reveal"><span>执行边界</span><div class="security-icon">⌘</div><h3>管住每次调用</h3><p>Schema、白名单、预算和超时共同约束执行。</p><a href="#flow">查看受控执行 →</a></article>
-          <article class="security-card reveal"><span>写入边界</span><div class="security-icon">✓</div><h3>批准后正式写入</h3><p>审核、摘要与履约先成为候选，授权后再写入。</p><a href="#principles">查看成果治理 →</a></article>
+          <article class="security-card is-active reveal" data-security-card="data"><span>数据边界</span><div class="security-icon">◫</div><h3>保护版本与来源</h3><p>检索受租户与版本约束，证据和工具调用均可审计。</p><button class="security-action" type="button" data-security-target="data">查看版本化流程 <span>→</span></button></article>
+          <article class="security-card reveal" data-security-card="execution"><span>执行边界</span><div class="security-icon">⌘</div><h3>管住每次调用</h3><p>Schema、白名单、预算和超时共同约束执行。</p><button class="security-action" type="button" data-security-target="execution">查看受控执行 <span>→</span></button></article>
+          <article class="security-card reveal" data-security-card="write"><span>写入边界</span><div class="security-icon">✓</div><h3>批准后正式写入</h3><p>审核、摘要与履约先成为候选，授权后再写入。</p><button class="security-action" type="button" data-security-target="write">查看成果治理 <span>→</span></button></article>
         </div>
+        <article class="security-detail reveal" id="security-detail" aria-live="polite">
+          <span class="security-detail-no" id="security-detail-no">01</span>
+          <div><p id="security-detail-kicker">数据边界 · VERSION BINDING</p><h3 id="security-detail-title">每次检索都绑定租户、合同与版本</h3><p id="security-detail-text">系统只在确定的数据范围内查找证据，引用保留原文位置，避免跨项目或跨版本混用。</p></div>
+          <div class="security-detail-tags" id="security-detail-tags"><span>Tenant isolation</span><span>Contract ID</span><span>Version ID</span><span>Source audit</span></div>
+        </article>
         <div class="governance-rail reveal"><span>RBAC</span><span>Tenant isolation</span><span>Version binding</span><span>Budget</span><span>Timeout</span><span>Loop guard</span><span>Audit</span><span>Metrics / Trace</span></div>
       </div>
     </section>
